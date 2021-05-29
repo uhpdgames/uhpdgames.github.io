@@ -1,0 +1,437 @@
+@import url(https://fonts.googleapis.com/css2?family=Asap:wght@700&display=swap);
+
+.author, .end-title, .scanlines, .section.s3 .title, .t-wrapper, .text-end, .text-hello, .text-title, .unclick {
+    user-select: none;
+    pointer-events: none
+}
+
+.facebook {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap
+}
+
+.facebook .them-cmt {
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    background: #eee;
+    opacity: .75;
+    width: auto;
+    max-height: 90vh
+}
+
+.youtube .ytb-frame, div#video {
+    height: 90vh;
+    width: 100vw
+}
+
+header.song {
+    /*top: 50px*/
+    top:-5px;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, form, h1, h2, h3, h4, h5, h6, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Asap, sans-serif;
+    vertical-align: baseline
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+body {
+    line-height: 1;
+    color: #000
+}
+
+.hero-image {
+    background-image: url(../img/song/d-evil/bg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    opacity: .8
+}
+
+.hero-image--bg {
+    width: 80rem;
+    position: relative;
+    top: 20%;
+    left: 30%
+}
+
+.hero-image--bg:before {
+    content: ' ';
+    display: block;
+    opacity: .5;
+    background-image: url(../img/song/d-evil/ungdang.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 70rem;
+    width: 80rem
+}
+
+body {
+    overflow: hidden
+}
+
+.text-end {
+    position: absolute;
+    right: 30%;
+    bottom: -4%;
+    color: #fff
+}
+
+.text-end span {
+    display: block;
+    line-height: 1.05;
+    letter-spacing: -.05em;
+    font-family: 'Space Mono', monospace;
+    font-size: 27.5263px;
+    text-transform: none
+}
+
+.text-3d {
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15)
+}
+
+.wrapper {
+    font-family: inherit;
+    position: absolute;
+    top: 10rem;
+    left: 65rem
+}
+
+#lyric {
+    overflow: hidden;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+    text-decoration: none;
+    line-height: 2;
+    font-size: 2.5rem;
+    text-transform: none;
+    white-space: pre-line;
+    width: fit-content;
+    height: 54rem;
+    text-shadow: 0 4px 3px rgba(0, 0, 0, .4), 0 8px 13px rgba(0, 0, 0, .1), 0 18px 23px rgba(0, 0, 0, .1);
+    top: 5rem;
+    left: 4rem;
+    position: absolute
+}
+
+.author {
+    position: absolute;
+    width: 30rem;
+    top: 0;
+    right: 0;
+    transform: rotate(10deg);
+    z-index: 1
+}
+
+.my-image {
+    background-image: url(../img/song/d-evil/bg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: inherit;
+    height: inherit;
+    opacity: .8
+}
+
+.hidden-xs {
+    display: none
+}
+
+.hidden-pc {
+    display: block
+}
+.c-3d-image-heading {
+    animation: label-d-evil 15s ease infinite;
+}
+.section.s3 .fp-tableCell{
+    background: black;
+}
+@media screen and (max-width: 1730px) {
+    .wrapper {
+        left: 50rem
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #lyric {
+        left: 5rem
+    }
+
+    .hero-image--bg:before {
+        left: 15%
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    #lyric {
+        left: 0;
+        width: max-content
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .hero-image--bg {
+        left: 10%;
+        width: 90vw
+    }
+
+    #lyric {
+        left: 0;
+        padding: 0 1rem 0 1rem;
+        margin: 0;
+        font-size: 2.5rem
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .hero-image--bg:before {
+        left: 5%
+    }
+
+    .section.s2 .title, .wrapper {
+        display: none
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .song .name {
+        order: 2
+    }
+
+    .hero-image--bg:before {
+        width: 90vw
+    }
+
+    .text-end span {
+        font-size: 1.5rem;
+        width: max-content
+    }
+
+    .t-wrapper {
+        width: max-content;
+        right: inherit
+    }
+
+    .glitch, .glow {
+        font-size: 1.5rem
+    }
+
+    #lyric {
+        font-size: 2rem;
+        height: 60vh;
+        width: auto
+    }
+
+    .author {
+        width: 20rem;
+        top: 0;
+        right: 10%
+    }
+
+    .text-hello {
+        font-size: 6em !important
+    }
+
+    #lyric + div {
+        left: 25%;
+        display: block;
+        position: absolute;
+        bottom: -10%
+    }
+
+    .facebook {
+        position: relative;
+        width: 100vw;
+        height: 100vh
+    }
+
+    .facebook .fb-video {
+        order: 1;
+        width: 100%;
+        display: block
+    }
+
+    .facebook .them-cmt {
+        display: block;
+        position: absolute;
+        right: unset;
+        left: 0;
+        background: #eee;
+        opacity: .75;
+        max-height: 90vh;
+        order: 2;
+        width: 100%
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .moonlight__img {
+        background: none !important
+    }
+
+    .section.s2 {
+        height: 100vh
+    }
+
+    .bgvid.xs {
+        width: 100vw;
+        height: 100vh
+    }
+
+    .hidden-xs {
+        display: block !important
+    }
+
+    .hidden-pc {
+        display: none !important
+    }
+
+    .hero-image--bg {
+        width: 100vw;
+        height: 100vh
+    }
+
+    .section.s2 .title, .wrapper {
+
+    }
+
+    .hero-image--bg {
+        left: 5%
+    }
+
+    .hero-image--bg:before {
+        height: 100vh
+    }
+
+    .text-hello {
+        top: -15% !important;
+        left: 0 !important;
+        font-size: 7em !important
+    }
+
+    #lyric {
+        font-size: 1.4rem;
+        top: 1rem
+    }
+
+    .end-title:after {
+        display: block;
+        content: " ";
+        height: 10vh
+    }
+
+    #lyric + div {
+        left: 70%;
+        display: block;
+        position: absolute;
+        bottom: 30%
+    }
+
+    .author {
+        width: 16rem;
+        top: -4%;
+        right: 0;
+        padding-right: 2rem
+    }
+
+    .mCSB_scrollTools.mCSB_1_scrollbar.mCS-rounded-dots-dark.mCSB_scrollTools_vertical {
+        margin-right: 1rem
+    }
+
+    .wrapper {
+        left: 0;
+        top: 28%;
+        text-align: left;
+        justify-content: left
+    }
+
+    .sign {
+        top: -4rem !important;
+        line-height: 1 !important;
+        letter-spacing: .01em !important;
+        font-size: 2rem !important;
+        width: max-content !important;
+        transform: translate(5%, -50%) !important
+    }
+
+    .sign b {
+        display: block;
+        padding: 0 1rem
+    }
+
+    .sign em {
+        display: none
+    }
+
+    .hero-image {
+        height: 100vh !important
+    }
+
+    .imagez.image--worksz video {
+        opacity: .5 !important
+    }
+
+    .title.end {
+        width: 87.5%;
+        margin: 0 6.25%;
+        top: 2rem;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        bottom: unset;
+        left: 15vw;
+        right: auto
+    }
+
+    .c-3d-image-heading {
+        left: 2rem !important
+    }
+
+    .imagez.image--worksz video {
+        width: 300% !important;
+        height: auto !important;
+        background: none !important;
+    }
+    .youtube .ytb-frame, div#video {
+        height: 80vh;
+
+    }
+
+    .c-3d-image.js-3d-image{
+
+        background: url("../img/song-old/Mask.jpg") no-repeat center;
+        background-size: contain;
+        animation: label-d-evil 10s ease infinite;
+    }
+
+    .my-image{
+        padding-top: 3rem;
+    }
+}
