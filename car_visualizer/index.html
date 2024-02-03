@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./content/car.css">
+
+  <script type="text/javascript" src="./m_01/g_01/g01.js"></script>
+  <script type="text/javascript" src="./m_01/f_01/c_01/b01.js"></script>
+  <script type="text/javascript" src="./m_01/f_01/c_01/br01.js"></script>
+  <script type="text/javascript" src="./m_01/f_01/c_01/g01.js"></script>
+  <script type="text/javascript" src="./m_01/f_01/c_01/i01.js"></script>
+  <script type="text/javascript" src="./m_01/f_01/c_01/r01.js"></script>
+  <script type="text/javascript" src="./m_01/f_01/c_01/w01.js"></script>
+  <script type="text/javascript" src="./m_01/mi_01/c_01/b01.js"></script>
+  <script type="text/javascript" src="./m_01/mi_01/c_01/br01.js"></script>
+  <script type="text/javascript" src="./m_01/mi_01/c_01/g01.js"></script>
+  <script type="text/javascript" src="./m_01/mi_01/c_01/i01.js"></script>
+  <script type="text/javascript" src="./m_01/mi_01/c_01/r01.js"></script>
+  <script type="text/javascript" src="./m_01/mi_01/c_01/w01.js"></script>
+  <script type="text/javascript" src="./m_01/a_01/c_01/b01.js"></script>
+  <script type="text/javascript" src="./m_01/a_01/c_01/br01.js"></script>
+  <script type="text/javascript" src="./m_01/a_01/c_01/g01.js"></script>
+  <script type="text/javascript" src="./m_01/a_01/c_01/i01.js"></script>
+  <script type="text/javascript" src="./m_01/a_01/c_01/r01.js"></script>
+  <script type="text/javascript" src="./m_01/a_01/c_01/w01.js"></script>
+
+
+  <!-- Isssus 
+https://github.com/BKcore/Three.js-experiments-pool/issues/1
+-->
+  <script type="x-shader/x-fragment" id="fragmentShaderDepth"> uniform sampler2D texture; varying vec2 vUV; vec4 pack_depth( const in float depth ) { const vec4 bit_shift = vec4( 256.0 * 256.0 * 256.0, 256.0 * 256.0, 256.0, 1.0 ); const vec4 bit_mask = vec4( 0.0, 1.0 / 256.0, 1.0 / 256.0, 1.0 / 256.0 ); vec4 res = fract( depth * bit_shift ); res -= res.xxyz * bit_mask; return res; } void main() { vec4 pixel = texture2D( texture, vUV ); if ( pixel.a < 0.5 ) discard; gl_FragData[ 0 ] = pack_depth( gl_FragCoord.z ); } </script>
+  <script type="x-shader/x-vertex" id="vertexShaderDepth">
+
+    varying vec2 vUV;
+
+    void main() {
+
+        vUV = 0.75 * uv;
+
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+        gl_Position = projectionMatrix * mvPosition;
+
+    }
+
+</script>
+
+</head>
+
+<body onload="init()">
+    <div id="tool-bar">
+        <div id="select-car">
+            <ul id="nav">
+                <li class="top"><a>SELECT CAR MODEL</a>
+                    <ul class="car">
+                        <li><a onmouseup="replaceCarByIndex(7)">ASTON MARTIN VANTAGE V8</a></li>
+                        <li><a onmouseup="replaceCarByIndex(5)">MERCEDES SLR500</a></li>
+                        <li><a onmouseup="replaceCarByIndex(6)">NISSAN 350Z</a></li>
+                        <li><a onmouseup="replaceCarByIndex(4)">CHEVROLET CAMARO</a></li>
+                        <li><a onmouseup="replaceCarByIndex(3)">MAZDA3</a></li>
+                        <li><a onmouseup="replaceCarByIndex(2)">AUDI S3</a></li>
+                        <li><a onmouseup="replaceCarByIndex(1)">MITSUBISHI LANCER EVO</a></li>
+                        <li><a onmouseup="replaceCarByIndex(0)">FERRARI CALIFORNIA</a></li>
+                    </ul>
+                </li>
+                <li class="top"><a>SELECT CAR COLOR</a>
+                    <ul class="color">
+                        <canvas id="body-picker-canvas" width="264" height="86"></canvas>
+                    </ul>
+                </li>
+                <li class="top"><a>SELECT RIMS COLOR</a>
+                    <ul class="color">
+                        <canvas id="rims-picker-canvas" width="264" height="86"></canvas>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="top-menu-left">
+        SELECT CAMERA:
+                    <a onmouseup='selectCamera("auto")'>&nbsp;&nbsp;&nbsp;&nbsp;AUTO</a>
+                    <a  onmouseup='selectCamera("free")'> &nbsp;&nbsp;&nbsp;&nbsp;FREE</a>
+    </div>
+    <div id="top-menu-right"><a onmouseup="toggleFullscreen()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FULLSCREEN</a></div>
+    <!-- end  -->
+    <script type="text/javascript" src="./content/Three.js"></script>
+	<script type="text/javascript" src="./content/CarVisualizer.min.js"></script>
+</body>
+</html>

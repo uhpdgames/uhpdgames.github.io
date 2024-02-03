@@ -1,0 +1,29 @@
+{
+  "name": "UHPD GAMES",
+  "short_name": "uhpd.games",
+  "description": "Trang website cá nhân của Kenji Dang, liên hệ tôi: admin@uhpd.games",
+  "icons": [
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "monochrome"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "72x72 96x96 128x128 192x192 512x512 256x256"
+    }
+  ],
+  "start_url": "./",
+  "scope": ".",
+  "orientation": "any",
+  "theme_color": "#fff",
+  "background_color": "#000",
+  "display": "fullscreen"
+}

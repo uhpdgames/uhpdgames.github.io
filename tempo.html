@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=419295368914147&autoLogAppEvents=1" nonce="c3ZAHSff"></script>
+    <meta charset="UTF-8"/>
+    <!--<script async src="https://cdn.ampproject.org/v0.js"></script>-->
+    <!--<link rel="canonical" href="https://uhpd.games/tempo.html">-->
+    <meta content="article" property="og:type" />
+    <meta content="Máy tính nhịp độ cho beat, tempo, bpm, raping" property="og:description" />
+    <meta content="assets/prev/tempo.jpg" property="og:image" />
+    <meta content="BPM calculator" property="og:site_name" />
+    <meta content="./tempo.html" property="og:url" />
+    <meta content="TEMPO | BPM calculator" property="og:title" />
+    <title>TEMPO | BPM calculator</title>
+    <link href="assets/css/jquery.fullpage.min.css"  rel="stylesheet"/>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.fullpage.min.js"></script>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <div id="loadOverlay"></div>
+  </head>
+  <body id="tempo">
+    <script src="assets/js/dev.js"></script>
+    <header></header>
+    <main id="barba-wrapper">
+      <div class="barba-container" data-namespace="top">
+        <div class="fullpage" id="js-fullpage">
+          <div class="section">
+            <div class="fullpage__slide">
+              <div class="title title--top">
+                <div class="border js-letter"><span></span><span class="js-letter"></span></div>
+                <p class="title__lead js-letter">
+                  bpm
+                </p>
+                calculator
+              </div>
+              <div class="block-bpm">
+                <h3 class="tut pb2rem" style="display: none;">
+                  <b>Cách tính nhịp: </b>
+                  <p>Nếu beat bạn dùng có tempo là 135 BPM thì bạn mất 1.8 giây để đọc trong đoạn 1 bar = 4 beats</p>
+                </h3>
+                <h3 class="pb1rem">Input tempo: </h3>
+                <fieldset class="pb2rem">
+                  <div class="container form-group ">
+                    <div class="form-group row">
+                      <label for="tunit_bpm">BPM</label>
+                      <input id="tunit_bpm" name="bpm" placeholder="60" type="text" value="60">
+                      <label for="tunit_bar">BAR&nbsp;</label>
+                      <input id="tunit_bar" name="bpm" placeholder="16" type="text" value="16">
+                      Time signature: 4/4
+                      <button class="button c-bpm" onclick="beatsPerMinute.calu()">BPM</button>
+                    </div>
+                  </div>
+                  <div class="error" style="display: none;"></div>
+                </fieldset>
+                <h3 class="pb2rem">RESULT</h3>
+                <fieldset class="pb2rem" style="border-bottom: 1px solid #CCC">
+                  <div class="container form-group result">
+                    <li>
+                      <div class="label">Beats-per-minute: </div>
+                      <div
+		                      class="rs rs-bpm highlight">60 BPM</div>
+                    </li>
+                    <li>
+                      <div class="label">Beats-per-second: </div>
+                      <div
+		                      class="rs rs-bps r5 highlight">1 Hz</div>
+                    </li>
+                    <li>
+                      <div class="label">Beat duration (1 beat) : </div>
+                      <div
+		                      class="rs rs-len r04 highlight">1 sec</div>
+                    </li>
+                    <li>
+                      <div class="label">Measure duration (1 bar) : </div>
+                      <div
+		                      class="rs rs-bar r1 highlight">4.0 sec</div>
+                    </li>
+                  </div>
+                </fieldset>
+                <h3 class="rs_title" style="display: none;">Độ dài <span class="rs_tag_bar">16</span> bar mất
+                  bao lâu? (giây)
+                </h3>
+                <div class="rs_beat_loop pb2rem">
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="section">
+            <div class="fullpage__slide">
+              <div class="title">
+                <div class="border js-letter"><span></span><span class="js-letter"></span></div>
+                <p class="title__lead js-letter">
+                  bpm
+                </p>
+                test
+              </div>
+              <div class="block-bpm">
+                <div class="test-bpm">
+                  <div class="bpm" id="crs-bpm">-</div>
+                  <button class="button tapTempo" onclick="beatsPerMinute.show()">TAP TEMPO</button>
+                  <button class="button reset" onclick="beatsPerMinute.reset()">RESET</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="fullpage__slide">
+              <div class="title">
+                <div class="border js-letter"><span></span><span class="js-letter"></span></div>
+                <p class="title__lead js-letter">
+                  PITCH
+                </p>
+                beat
+              </div>
+              <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <main class="mdl-layout__content">
+                  <div class="page-content">
+                    <div class="spectrogram mdl-shadow--2dp" id="spectrogramContainer">
+                      <div class="mdl-grid mdl-grid--no-spacing spectrogram-heading">
+                        <div class="mdl-cell--8-col">
+                          <h4 class="caption">
+                            Spectrogram
+                            <div class="bpm-spinner mdl-spinner mdl-spinner--single-color mdl-js-spinner"
+                                 id="spectrogramSpinner"></div>
+                          </h4>
+                        </div>
+                        <div class="mdl-cell--4-col beat-lines-switch-container">
+                          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="beatLinesSwitch">
+                          <input checked class="mdl-switch__input" id="beatLinesSwitch" type="checkbox">
+                          <span class="mdl-switch__label">Show beat lines</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="tracker" id="spectrogramTracker"></div>
+                    </div>
+                    <div class="waveform mdl-shadow--2dp" id="waveformContainer">
+                      <h4 class="caption">
+                        Wavefrom
+                        <div class="bpm-spinner mdl-spinner mdl-spinner--single-color mdl-js-spinner"
+                             id="waveformSpinner"></div>
+                      </h4>
+                      <div class="tracker" id="waveformTracker"></div>
+                    </div>
+                    <span class="mdl-shadow--2dp" id="playbackTimeValue"></span>
+                    <div class="controls mdl-grid ">
+                      <div class="mdl-cell mdl-cell--1-col">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" disabled="" id="btnTogglePlay">
+                        <i class="material-icons" id="iconTogglePlay">play_arrow</i>
+                        </button>
+                      </div>
+                      <div class="mdl-cell mdl-cell--11-col mdl-grid--no-spacing playback-bar">
+                        <input class="mdl-slider mdl-js-slider" disabled id="playbackBar" max="100" min="0" step="0.01"
+                               tabindex="0" type="range" value="0">
+                      </div>
+                      <div class="mdl-cell mdl-cell--8-col">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                                onclick="document.getElementById('fileInput').click()">Select beat</button>
+                        <input class="mdl-button mdl-componentupgraded" id="fileInput" name="" style="display: none" type="file">
+	                      <!-- <button class="mdl-button mdl-js-button mdl-button--raised" id="btnCalcTempo" disabled="">Определить темп</button> -->
+                        <div class="bpm-spinner mdl-spinner mdl-spinner--single-color mdl-js-spinner" id="bpmSpinner"></div>
+                        <span class="bpm-text mdl-typography--display-1-color-contrast" id="bpmValue"
+                              style="display: none;">123 BPM</span>
+                        <span class="pulse" id="beatIndicator" style="display: none;"></span>
+                      </div>
+                      <div class="mdl-cell mdl-cell--4-col">
+                        Track volume
+                        <input class="mdl-slider mdl-js-slider" id="trackGainBar" max="1" min="0" step="0.01" type="range"
+                               value="0.1">
+                        Tick volume
+                        <input class="mdl-slider mdl-js-slider" id="clickGainBar" max="1" min="0" step="0.01" type="range"
+                               value="0.5">
+                      </div>
+                      <div class="mdl-cell mdl-cell--2-col">
+                        <label for="sampleRateInput">File sample rate (Hz)</label>
+                        <input class="mdl-textfield__input" id="sampleRateInput" name="" placeholder="44100" type="number"
+                               value="44100" />
+                      </div>
+                    </div>
+                  </div>
+						 
+                </main>
+              </div>
+              <audio id="clickSound" src="" />
+            </div>
+          </div>
+          <div class="section">
+            <div class="fullpage__slide">
+              <div class="title">
+                <div class="border js-letter"><span></span><span class="js-letter"></span></div>
+                <p class="title__lead js-letter">
+                  rhythm
+                </p>
+                reserach
+              </div>
+              <div class="block-bpm">
+                <button class="mdl-button mdl-js-button mdl-button--accent" onclick="isHightLight();">
+                <span class="highlight r6" style="color:#fff;">High-light:</span>
+                <span class="iwanthightnow highlight r1"
+                      style="color:#fff;">
+                ON</span>
+                </button>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" id="search" type="text">
+                  <label class="mdl-textfield__label" for="search">Nhập bất kỳ từ khóa....</label>
+                </div>
+                <div class="my-scroll" data-mcs-theme="dark" id="match-list" style="display: none">
+                </div>
+                <div id="match-info">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="myadzzs" style="bottom:30%;">
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-8211744197965065"
+               data-ad-slot="7473400721"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+        <div class="myadzzs" style="left:0;right:unset;bottom:35%;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-8211744197965065"
+               data-ad-slot="8511258028"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
+        <p class="scrollDown">SCROLLDOWN</p>
+        <div class="sky-color"></div>
+      </div>
+    </main>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+    <link href="assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="assets/css/highlight.css" rel="stylesheet">
+    <link href="assets/css/tempo.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+    <script defer src="//code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="tool/lib/music-tempo.min.js"></script>
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="tool/lib/TarsosDSP/FloatFFT.js"></script>
+    <script src="tool/lib/TarsosDSP/ConstantQ.js"></script>
+    <script src="tool/lib/chroma.js"></script>
+    <script src="tool/lib/material/material.js"></script>
+    <script src="assets/js/tempo.js"></script>
+    <script>
+      setTimeout(function (){
+        $('.menu-p1').text('bpm');
+        $('.menu-p2').text('test');
+        $('.menu-p3').text('pitch');
+        $('.menu-p4').text('rhythm');
+      }, 6000)
+    </script>
+  </body>
+</html>

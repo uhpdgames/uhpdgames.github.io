@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta content="text/html;charset=UTF-8" http-equiv="content-type" />
+<head>
+
+	 <meta content="https://uhpd.games/lover.html" property="og:url" />
+  
+ 
+     <link href="assets/css/jquery.fullpage.min.css"  rel="stylesheet"/>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.fullpage.min.js"></script>
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <div id="loadOverlay"></div>
+
+
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="user-scalable=no">
+  <link rel="icon" href="icon/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon/icon.png">
+  <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
+  <link rel="canonical" href="https://uhpd.games/">
+  <meta content="OutSchool Games" property="og:description"/>
+  <meta content="assets/prev/index.jpg" property="og:image"/>
+  <meta content="A game by Ung Hoang Phi Dang" property="og:site_name"/>
+  <meta content="uhpd.games" property="og:url"/>
+  <meta content="OutSchool Games" property="og:title"/>
+  <title>UHPD GAMES | UNG HOANG PHI DAMG</title>
+  <script type="text/javascript" src="js/libs/pixi.js"></script>
+  <script type="text/javascript" src="js/libs/pixi-tilemap.js"></script>
+  <script type="text/javascript" src="js/libs/pixi-picture.js"></script>
+  <script type="text/javascript" src="js/libs/fpsmeter.js"></script>
+  <script type="text/javascript" src="js/libs/lz-string.js"></script>
+  <script type="text/javascript" src="js/libs/iphone-inline-video.browser.js"></script>
+
+
+  <style>
+      #GameCanvas{
+          width: 1280px !important;
+          height: 720px !important;
+      }
+  </style>
+</head>
+
+  <body id="lover" style="background-color: black">
+    <script src="assets/js/dev.js"></script>
+    <script type="text/javascript" src="js/rpg.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    
+    <main id="barba-wrapper">
+      <div class="barba-container" data-namespace="top">
+        <div class="fullpage" id="js-fullpage">
+          <div class="section">
+            <div class="fullpage__slide">
+              <div class="title">
+                <h2 class="title__text js-letter"> </h2>
+                <div class="border js-letter"> </div>
+                <p class="title__lead js-letter"> </p>
+              </div>
+              <div class="imagez image--worksz">
+                <div class="image__over">
+                ssssssssssss
+                </div>
+              </div>
+	            
+            </div>
+          </div>
+          
+        </div>
+	    <div class="slick-album"></div>
+        <p class="scrollDown">SCROLLDOWN</p>
+        <div class="moon-background">
+          <div class="moonlight">
+            <div class="moonlight__wrap js-parallax-moonlight">
+              <div class="layer moonlight__img" data-depth="0.2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="star js-parallax-star">
+          <div class="layer" data-depth="0.1">
+            <div class="star__img"><img src="assets/img/star.svg"></div>
+          </div>
+        </div>
+        <div class="sky-color"></div>
+      </div>
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+body{
+	margin:0px;
+	padding:0px;
+}
+				
+		.center{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			width:800px;}
+			.center img{
+				display:flex;
+				margin:auto;}					
+								
+					.modal{
+						display:block;
+						position:fixed;
+						z-index:1;
+						left:0;
+						top:0;
+						width:100%;
+						height:100%;
+						overflow:auto;
+						background-color:rgba(0,0,0,0.4);}
+								
+								

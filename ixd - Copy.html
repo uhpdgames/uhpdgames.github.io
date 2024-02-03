@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="article" property="og:type"/>
+    <title>IXD BIKER</title>
+    <link href="assets/css/jquery.fullpage.min.css" rel="stylesheet"/>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.fullpage.min.js"></script>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <div id="loadOverlayzz"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="assets/js/leaflet.js"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <link rel="stylesheet" href="assets/css/leaflet.css" />
+</head>
+<body id="ixd_biker">
+<script src="assets/js/dev.js"></script>
+<header></header>
+<main id="barba-wrapper">
+    <div class="barba-container" data-namespace="top">
+        <div class="fullpage" id="js-fullpage">
+            <div class="section">
+                <div class="fullpage__slide">
+                    <div class="block">
+                        <div id="speedoCanvasContainer" style="visibility: visible"></div>
+
+                        <p id="demo">GPS data here.</p>
+                        <button onClick="toggleFullscreen()" width="100px" height="100px">Fullscreen</button>
+                        <br>
+                        <canvas id="canvas1" width="700px" height="400px">ns =(</canvas>
+                        <p id="errorLog"></p>
+
+                    </div>
+                </div>
+            </div>       <div class="section">
+                <div class="fullpage__slide">
+                    <div class="block">
+                        <div id="details"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="fullpage__slide">
+                    <div class="block">
+                        <button onClick="toggleFullscreen()" width="100px" height="100px">Fullscreen</button>
+                        <form id="address-form" action="" method="get" autocomplete="off">
+                            <p class="title">Sample address form for North America</p>
+                            <p class="note"><em>* = required field</em></p>
+                            <label class="full-field">
+                                <!-- Avoid the word "address" in id, name, or label text to avoid browser autofill from conflicting with Place Autocomplete. Star or comment bug https://crbug.com/587466 to request Chromium to honor autocomplete="off" attribute. -->
+                                <span class="form-label">Deliver to*</span>
+                                <input
+                                        id="ship-address"
+                                        name="ship-address"
+                                        required
+                                        autocomplete="off"
+                                />
+                            </label>
+                            <label class="full-field">
+                                <span class="form-label">Apartment, unit, suite, or floor #</span>
+                                <input id="address2" name="address2" />
+                            </label>
+                            <label class="full-field">
+                                <span class="form-label">City*</span>
+                                <input id="locality" name="locality" required />
+                            </label>
+                            <label class="slim-field-left">
+                                <span class="form-label">State/Province*</span>
+                                <input id="state" name="state" required />
+                            </label>
+                            <label class="slim-field-right" for="postal_code">
+                                <span class="form-label">Postal code*</span>
+                                <input id="postcode" name="postcode" required />
+                            </label>
+                            <label class="full-field">
+                                <span class="form-label">Country/Region*</span>
+                                <input id="country" name="country" required />
+                            </label>
+                            <button type="button" class="my-button">Save address</button>
+                            <input type="reset" value="Clear form" />
+
+
+                            <input type="text" name="start" class="input" id="start" placeholder="Choose starting point" />
+                            <input type="text" name="end" class="input" id="destination" placeholder="Choose starting point" />
+                            <button style="display: block;" type="submit">Get Directions</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="fullpage__slide">
+                    <div class="block">
+                        <div id='map'></div>
+                            <div class="tool">
+                                <button onClick="toggleFullscreen()" width="100px" height="100px">Fullscreen</button>
+                                <div class="map-tooltip">
+                                    <button onClick="toggleFullscreen()" width="100px" height="100px">Fullscreen</button>
+                                    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+                                    <form id="form_map" action="" method="get" autocomplete="off">
+
+                                        <input type="text" name="start" class="input" id="ship-address" placeholder="Choose starting point" />
+                                        <input type="text" name="start" class="input" id="start" placeholder="Choose startinxxg point" />
+                                        <input type="text" name="end" class="input" id="destination" placeholder="Choose starting point" />
+                                        <button style="display: block;" type="submit">Get Directions</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="section">
+                <div class="fullpage__slide">
+                    <div class="title">
+                        <div class="border js-letter"><span></span><span class="js-letter"></span></div>
+                        <p class="title__lead js-letter">
+                            rhythm
+                        </p>
+                        reserach
+                    </div>
+                    <div class="block">
+                        <div id="errorLog" style="display: none"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <p class="scrollDown">SCROLLDOWN</p>
+        <div class="sky-color"></div>
+    </div>
+</main>
+<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="assets/css/highlight.css" rel="stylesheet">
+<link href="ixd/main.css" rel="stylesheet">
+<script src="ixd/main.js"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3W5D8BP4I2KLTbTlHaFndHve9RV7A-4k&callback=initAutocomplete&libraries=places&v=weekly"
+
+></script>
+
+<script src="ixd/speedo.js"></script>
+</body>
+</html>

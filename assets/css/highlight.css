@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css2?family=Asap:wght@700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Space+Mono&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+.highlight , mark{
+    background: #FFCD69;
+    color: inherit;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: none;
+    font-family: inherit
+}
+mark {
+    background: #fe6a5c;
+    color: black;
+}
+.highlight.r1 {
+    background: #fe6a5c;
+}
+
+.highlight.r2 {
+    background: #000;
+}
+
+.highlight.r3 {
+    background: #00bff3;
+}
+
+.highlight.r04 {
+    background: #00a651;
+}
+
+.highlight.r4 {
+    background: #0072bb;
+}
+
+.highlight.r5 {
+    background: #fff;
+    color: #000;
+}
+
+.highlight.r6 {
+    background: #2e3192;
+}
+
+.highlight.r7 {
+    background: #fbae5c;
+}
+
+.highlight.r8 {
+    background: #f37257;
+}
+
+/*la-roi*/
+#la-roi .highlight {
+    padding: 0 5px;
+}
+
+.highlight.yellow {
+    background: #f6fd89;
+
+}
+
+.highlight.pink {
+    background: #faafce;
+}
+
+.highlight.green {
+    background: #b9ffa9;
+}
+
+.highlight.sea {
+    background: #94cdd8;
+}
+
+.highlight.orange {
+    background: #fec760;
+}
+
+.highlight.purple {
+    background: #af94c1;
+}
+
+.highlight.indianred {
+    background: #f6808c;
+}
+

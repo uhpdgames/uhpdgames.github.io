@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="article" property="og:type"/>
+    <title>IXD BIKER</title>
+    <link href="assets/css/jquery.fullpage.min.css" rel="stylesheet"/>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.fullpage.min.js"></script>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <div id="loadOverlay"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="assets/js/leaflet.js"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <link rel="stylesheet" href="assets/css/leaflet.css" />
+</head>
+<body id="ixd_biker">
+<script src="assets/js/dev.js"></script>
+<header></header>
+<main id="barba-wrapper">
+    <div class="barba-container" data-namespace="top">
+        <div class="fullpage" id="js-fullpage">
+            <div class="section">
+                <div class="fullpage__slide">
+                    <div class="block">
+                        <div id="speedoCanvasContainer" style="visibility: visible"></div>
+                        <p id="demo">GPS data here.</p>
+                        <button onClick="toggleFullscreen()" width="100px" height="100px">Fullscreen</button>
+                        <br>
+                        <canvas id="canvas1" width="700px" height="400px">ns =(</canvas>
+                        <p id="errorLog"></p>
+                        <div id="div_img_geo">
+                            <img id="img_geo" src=""  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="map"></div>
+<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="assets/css/highlight.css" rel="stylesheet">
+<link href="ixd/main.css" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3W5D8BP4I2KLTbTlHaFndHve9RV7A-4k"
+></script>
+<script>
+    var urlGoogle = 'https://maps.googleapis.com/maps/api/staticmap?maptype=hybrid&size=400x400&zoom=17&key=AIzaSyB3W5D8BP4I2KLTbTlHaFndHve9RV7A-4k&center=40.714728,-73.998672';
+    $('#img_geo').attr("src", urlGoogle);
+
+</script>
+
+<script src="ixd/speedo.js"></script>
+</body>
+</html>

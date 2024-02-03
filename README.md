@@ -1,2 +1,2 @@
 # uhpdgames.github.io
-web
+public
