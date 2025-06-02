@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Free Sample - Massé Life by Phi Dang Ung Hoang</title>
+    <meta name="description" content="Read the first chapter of Massé Life for free. Experience the psychological thriller that combines billiards mastery with deep emotional healing.">
+    <meta name="keywords" content="Massé Life free sample, read online, psychological thriller, billiards novel, Phi Dang Ung Hoang">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .back-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .back-btn {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .back-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: translateX(-3px);
+        }
+        
+        .book-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .progress-indicator {
+            background: #333;
+            height: 6px;
+            width: 150px;
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #fff, #ccc);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .buy-now-btn {
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .buy-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Left Sidebar - Table of Contents */
+        .toc-sidebar {
+            width: 300px;
+            padding: 2rem;
+            background: rgba(255,255,255,0.02);
+            border-right: 1px solid #333;
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+        
+        .toc-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 0.5rem;
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-item {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .toc-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .toc-item.active {
+            background: rgba(255,255,255,0.1);
+            border-color: #fff;
+        }
+        
+        .toc-item.locked {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .chapter-number {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .chapter-title {
+            font-weight: bold;
+            margin: 0.25rem 0;
+        }
+        
+        .chapter-preview {
+            font-size: 0.85rem;
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        .lock-icon {
+            float: right;
+            color: #666;
+        }
+        
+        /* Reader Content */
+        .reader-container {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .reader-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+        }
+        
+        .sample-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+        
+        .chapter-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .reading-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            min-width: 100px;
+        }
+        
+        .stat-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        /* Reading Content */
+        .reading-content {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .paragraph {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+        
+        .paragraph:first-letter {
+            font-size: 3rem;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: #fff;
+        }
+        
+        .dialogue {
+            font-style: italic;
+            color: #f0f0f0;
+            border-left: 3px solid #fff;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .scene-break {
+            text-align: center;
+            margin: 3rem 0;
+            color: #666;
+            font-size: 1.5rem;
+        }
+        
+        /* Reading Controls */
+        .reading-controls {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .control-btn {
+            background: none;
+            border: 2px solid #fff;
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .control-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: scale(1.1);
+        }
+        
+        .font-size-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        /* Continue Reading CTA */
+        .continue-cta {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border: 2px solid #fff;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .continue-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.02) 10px,
+                rgba(255,255,255,0.02) 20px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .continue-cta > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+        }
+        
+        .cta-secondary {
+            background: none;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .cta-secondary:hover {
+            background: #fff;
+            color: #000;
+        }
+        
+        /* Footer */
+        .sample-footer {
+            background: rgba(0,0,0,0.8);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .rating-section {
+            margin-bottom: 2rem;
+        }
+        
+        .rating-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .star {
+            font-size: 2rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .star.active,
+        .star:hover {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+        
+        .share-section {
+            margin-top: 2rem;
+        }
+        
+        .share-title {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #666;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .share-btn:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Animations */
+        @keyframes shimmer {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .toc-sidebar {
+                width: 250px;
+            }
+            
+            .reading-controls {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid #333;
+            }
+            
+            .reading-content {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .header-actions {
+                order: 3;
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .reader-container {
+                padding: 1rem;
+            }
+            
+            .reading-content {
+                padding: 1.5rem;
+            }
+            
+            .chapter-header h1 {
+                font-size: 2rem;
+            }
+            
+            .paragraph {
+                font-size: 1rem;
+            }
+            
+            .continue-cta {
+                padding: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .header,
+            .toc-sidebar,
+            .reading-controls,
+            .continue-cta,
+            .sample-footer {
+                display: none;
+            }
+            
+            .main-content {
+                padding-top: 0;
+            }
+            
+            .reading-content {
+                background: none;
+                border: none;
+                box-shadow: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="back-nav">
+                <a href="/" class="back-btn">
+                    <span>←</span>
+                    <span>Back to Home</span>
+                </a>
+                <div class="book-title">Massé Life - Free Sample</div>
+            </div>
+            
+            <div class="header-actions">
+                <div class="progress-indicator" title="Reading Progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <a href="https://amazon.com/dp/B0FB51KH6M" class="buy-now-btn" target="_blank">
+                    📚 Buy Full Book
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Table of Contents Sidebar -->
+        <aside class="toc-sidebar">
+            <h3 class="toc-title">📖 Table of Contents</h3>
+            <ul class="toc-list">
+                <li class="toc-item active" onclick="scrollToChapter('chapter1')">
+                    <div class="chapter-number">Chapter 1</div>
+                    <div class="chapter-title">The Perfect Shot</div>
+                    <div class="chapter-preview">Where precision meets destiny...</div>
+                </li>
+                <li class="toc-item locked">
+                    <div class="chapter-number">Chapter 2</div>
+                    <div class="chapter-title">Reflections in Green Felt</div>
+                    <div class="chapter-preview">Hidden truths surface...</div>
+                    <span class="lock-icon">🔒</span>
+                </li>
+                <li class="toc-item locked">
+                    <div class="chapter-number">Chapter 3</div>
+                    <div class="chapter-title">The Psychology of the Game</div>
+                    <div class="chapter-preview">Mind games begin...</div>
+                    <span class="lock-icon">🔒</span>
+                </li>
+                <li class="toc-item locked">
+                    <div class="chapter-number">Chapter 4</div>
+                    <div class="chapter-title">Broken Angles</div>
+                    <div class="chapter-preview">When everything goes wrong...</div>
+                    <span class="lock-icon">🔒</span>
+                </li>
+                <li class="toc-item locked">
+                    <div class="chapter-number">Chapter 5</div>
+                    <div class="chapter-title">The Massé Shot</div>
+                    <div class="chapter-preview">The impossible becomes possible...</div>
+                    <span class="lock-icon">🔒</span>
+                </li>
+            </ul>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 10px;">
+                <h4 style="color: #fff; margin-bottom: 0.5rem;">🎯 Sample Includes:</h4>
+                <ul style="color: #ccc; font-size: 0.9rem; list-style: none; line-height: 1.6;">
+                    <li>✓ Complete Chapter 1</li>
+                    <li>✓ Character introductions</li>
+                    <li>✓ Professional billiards setting</li>
+                    <li>✓ Psychological depth preview</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Reader Container -->
+        <div class="reader-container">
+            <!-- Reader Header -->
+            <header class="reader-header fade-in">
+                <div class="sample-badge">🎁 FREE SAMPLE CHAPTER</div>
+                <div class="chapter-header">
+                    <h1>The Perfect Shot</h1>
+                    <div class="chapter-subtitle">Chapter 1 of Massé Life</div>
+                </div>
+                
+                <div class="reading-stats">
+                    <div class="stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Min Read</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2,100</div>
+                        <div class="stat-label">Words</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1/24</div>
+                        <div class="stat-label">Pages</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Reading Content -->
+            <article class="reading-content fade-in" id="chapter1">
+                <p class="paragraph">
+                    The amber lights of the Meridian Billiards Club cast long shadows across the emerald felt, each table a stage for its own drama. Marcus Chen adjusted his grip on the cue stick, feeling the familiar weight of carved maple against his palm. Twenty-three years of professional play had taught him that every shot was a conversation between mind and muscle, between intention and execution.
+                </p>
+
+                <p class="paragraph">
+                    Tonight was different. Tonight, the stakes extended far beyond the tournament prize money. Across the table, Victoria Reyes chalked her cue with the methodical precision of a surgeon preparing for a delicate operation. Her dark eyes never left the layout of balls before them—a complex puzzle that would determine not just the match, but perhaps the trajectory of both their careers.
+                </p>
+
+                <div class="dialogue">
+                    "You know," Victoria said, her voice carrying the hint of an accent that spoke of late nights in Buenos Aires pool halls, "there's something beautiful about a Massé shot. The way the cue ball defies physics, curves around obstacles that seem impossible to navigate."
+                </div>
+
+                <p class="paragraph">
+                    Marcus nodded, though his attention was divided between her words and the intricate geometry spread before him. The 8-ball tournament had reached its final moments, and the position called for exactly the kind of shot Victoria described—a high-risk, high-reward Massé that would either secure his victory or hand her the championship on a silver platter.
+                </p>
+
+                <p class="paragraph">
+                    The crowd had fallen silent, understanding instinctively that they were witnessing something rare. In the world of professional billiards, such moments were precious—when skill transcended technique and entered the realm of art. Marcus could feel the weight of expectation, but also something else: the strange sense that this shot represented more than just a path to victory.
+                </p>
+
+                <div class="scene-break">* * *</div>
+
+                <p class="paragraph">
+                    Six months earlier, Marcus had been at the lowest point of his career. A devastating loss in the World Championships had left him questioning everything he thought he knew about the game. His longtime coach, Elena Vasquez, had introduced him to a sports psychologist who specialized in what she called "performance trauma."
+                </p>
+
+                <div class="dialogue">
+                    "Every professional athlete carries wounds," Dr. Sarah Kim had explained during their first session. "The question isn't whether you've been hurt—it's whether you'll let that pain teach you something, or whether you'll let it define your limitations."
+                </div>
+
+                <p class="paragraph">
+                    Those words echoed in Marcus's mind now as he studied the table. The required shot demanded not just technical precision, but the kind of fearless commitment that only came from conquering one's own doubts. He would need to elevate his cue to nearly vertical, strike the ball with enough spin to curve it around three obstacle balls, and trust that physics and preparation would carry him to success.
+                </p>
+
+                <p class="paragraph">
+                    Victoria watched him from across the table, and for a moment, Marcus saw something in her expression that surprised him—not the competitive intensity he expected, but something softer. Understanding, perhaps. Or recognition of a kindred spirit who knew that sometimes the most important victories happened not on the scoreboard, but in the quiet moments when we choose to trust ourselves despite our fears.
+                </p>
+
+                <div class="dialogue">
+                    "The beautiful thing about a Massé shot," she continued, as if reading his thoughts, "is that it requires you to commit completely. There's no halfway, no hedging your bets. You either trust the technique, or you miss entirely."
+                </div>
+
+                <p class="paragraph">
+                    Marcus smiled, finally understanding that this wasn't just about billiards. This was about learning to navigate the impossible angles life presented, about finding ways to reach your target even when conventional wisdom said it couldn't be done. He thought about Dr. Kim's words, about Elena's patient instruction, about the countless hours of practice that had brought him to this moment.
+                </p>
+
+                <p class="paragraph">
+                    He positioned himself behind the cue ball, raised his stick to the steep angle required for the shot, and took a deep breath. In the silence of the moment before execution, Marcus realized that victory or defeat mattered less than the courage to attempt something that seemed impossible.
+                </p>
+
+                <p class="paragraph">
+                    The leather tip connected with the ball in perfect harmony, imparting the precise spin and velocity needed to send it on its curved journey around the obstacles. Time seemed suspended as the ball traced its arc across the felt, defying the straight lines that governed most of existence...
+                </p>
+            </article>
+
+            <!-- Continue Reading CTA -->
+            <section class="continue-cta fade-in">
+                <h3 class="cta-title">🎱 Want to See How the Shot Ends?</h3>
+                <p class="cta-description">
+                    This is just the beginning of Marcus and Victoria's journey. Discover how the Massé shot changes everything, explore the psychological depths of professional billiards, and uncover the emotional healing that happens when we learn to trust our own precision.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://amazon.com/dp/B0FB51KH6M" class="cta-primary" target="_blank">
+                        📖 Get the Full Book
+                    </a>
+                    <a href="/author" class="cta-secondary">
+                        👤 Meet the Author
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Reading Controls -->
+    <div class="reading-controls">
+        <button class="control-btn" onclick="window.print()" title="Print Chapter">
+            🖨️
+        </button>
+        <div class="font-size-controls">
+            <button class="control-btn" onclick="increaseFontSize()" title="Increase Font Size">
+                A+
+            </button>
+            <button class="control-btn" onclick="decreaseFontSize()" title="Decrease Font Size">
+                A-
+            </button>
+        </div>
+        <button class="control-btn" onclick="toggleNightMode()" title="Toggle Reading Mode">
+            🌙
+        </button>
+        <button class="control-btn" onclick="shareChapter()" title="Share Chapter">
+            📤
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="sample-footer">
+        <div class="footer-content">
+            <!-- Rating Section -->
+            <div class="rating-section">
+                <h4 class="rating-title">How would you rate this sample?</h4>
+                <div class="star-rating" id="starRating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <div id="ratingFeedback" style="color: #ccc; font-style: italic;"></div>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <h4 class="share-title">Share this sample with friends:</h4>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn" onclick="shareOnFacebook()">
+                        <span>📘</span>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="share-btn" onclick="shareOnTwitter()">
+                        <span>🐦</span>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="share-btn" onclick="shareViaEmail()">
+                        <span>📧</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="#" class="share-btn" onclick="copyLink()">
+                        <span>🔗</span>
+                        <span>Copy Link</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; color: #666; font-size: 0.9rem;">
+                <p>© 2025 Phi Dang Ung Hoang. All rights reserved.</p>
+                <p style="margin-top: 0.5rem;">This is a free sample. The complete novel is available on Amazon Kindle.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Reading Progress Tracking
+        function updateReadingProgress() {
+            const content = document.querySelector('.reading-content');
+            const contentHeight = content.offsetHeight;
+            const contentTop = content.offsetTop;
+            const scrollTop = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            
+            const contentStart = contentTop - windowHeight / 2;
+            const contentEnd = contentTop + contentHeight - windowHeight / 2;
+            
+            if (scrollTop < contentStart) {
+                progress = 0;
+            } else if (scrollTop > contentEnd) {
+                progress = 100;
+            } else {
+                progress = ((scrollTop - contentStart) / (contentEnd - contentStart)) * 100;
+            }
+            
+            document.getElementById('progressBar').style.width = Math.max(0, Math.min(100, progress)) + '%';
+        }
+
+        // Font Size Controls
+        let currentFontSize = 1.1;
+        
+        function increaseFontSize() {
+            currentFontSize = Math.min(1.6, currentFontSize + 0.1);
+            updateFontSize();
+        }
+        
+        function decreaseFontSize() {
+            currentFontSize = Math.max(0.8, currentFontSize - 0.1);
+            updateFontSize();
+        }
+        
+        function updateFontSize() {
+            const paragraphs = document.querySelectorAll('.paragraph');
+            paragraphs.forEach(p => {
+                p.style.fontSize = currentFontSize + 'rem';
+            });
+            localStorage.setItem('readerFontSize', currentFontSize);
+        }
+
+        // Night Mode Toggle
+        let isNightMode = true; // Default is already dark
+        
+        function toggleNightMode() {
+            isNightMode = !isNightMode;
+            
+            if (isNightMode) {
+                // Dark mode (default)
+                document.body.style.background = 'linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%)';
+                document.body.style.color = '#e0e0e0';
+                document.querySelector('.reading-content').style.background = 'rgba(255,255,255,0.02)';
+            } else {
+                // Light mode
+                document.body.style.background = 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 50%, #f5f5f5 100%)';
+                document.body.style.color = '#333';
+                document.querySelector('.reading-content').style.background = 'rgba(255,255,255,0.9)';
+            }
+            
+            localStorage.setItem('readerNightMode', isNightMode);
+        }
+
+        // Chapter Navigation
+        function scrollToChapter(chapterId) {
+            const element = document.getElementById(chapterId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active TOC item
+                document.querySelectorAll('.toc-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                event.target.closest('.toc-item').classList.add('active');
+            }
+        }
+
+        // Star Rating System
+        function initializeStarRating() {
+            const stars = document.querySelectorAll('.star');
+            const feedback = document.getElementById('ratingFeedback');
+            
+            stars.forEach(star => {
+                star.addEventListener('mouseover', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    highlightStars(rating);
+                });
+                
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    setRating(rating);
+                });
+            });
+            
+            document.querySelector('.star-rating').addEventListener('mouseleave', function() {
+                const savedRating = localStorage.getItem('sampleRating');
+                if (savedRating) {
+                    highlightStars(parseInt(savedRating));
+                } else {
+                    highlightStars(0);
+                }
+            });
+        }
+        
+        function highlightStars(rating) {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+        
+        function setRating(rating) {
+            const feedback = document.getElementById('ratingFeedback');
+            const messages = {
+                1: "Thanks for your feedback! We'll work to improve.",
+                2: "We appreciate your input. What could be better?",
+                3: "Thank you! We're glad you found it decent.",
+                4: "Wonderful! We're pleased you enjoyed the sample.",
+                5: "Amazing! Thank you for the 5-star rating! 🌟"
+            };
+            
+            localStorage.setItem('sampleRating', rating);
+            feedback.textContent = messages[rating];
+            feedback.style.color = rating >= 4 ? '#4caf50' : '#ff9800';
+            
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'sample_rating', {
+                    'event_category': 'User Engagement',
+                    'event_label': `${rating} stars`,
+                    'value': rating
+                });
+            }
+        }
+
+        // Social Sharing Functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Just read this amazing free sample of "Massé Life" - a psychological thriller about billiards and healing!');
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank', 'width=600,height=400');
+        }
+        
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Just read an incredible free sample of "Massé Life" 🎱 - psychological thriller meets billiards mastery! Check it out:');
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=600,height=400');
+        }
+        
+        function shareViaEmail() {
+            const subject = encodeURIComponent('Check out this free book sample - Massé Life');
+            const body = encodeURIComponent(`I just read this fascinating free sample from "Massé Life" by Phi Dang Ung Hoang. It's a psychological thriller set in the world of professional billiards - really unique and engaging!\n\nYou can read it here: ${window.location.href}\n\nThought you might enjoy it!`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+        
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = event.target.closest('.share-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<span>✅</span><span>Copied!</span>';
+                btn.style.background = 'rgba(76, 175, 80, 0.3)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = 'rgba(255,255,255,0.05)';
+                }, 2000);
+            }).catch(() => {
+                alert('Unable to copy link. Please copy manually: ' + window.location.href);
+            });
+        }
+
+        function shareChapter() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Massé Life - Free Sample',
+                    text: 'Check out this free sample of Massé Life - a psychological thriller about billiards and healing!',
+                    url: window.location.href
+                });
+            } else {
+                copyLink();
+            }
+        }
+
+        // Reading Time Tracking
+        function trackReadingTime() {
+            let startTime = Date.now();
+            let totalTime = 0;
+            let isActive = true;
+            
+            // Track when user becomes inactive
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    totalTime += Date.now() - startTime;
+                    isActive = false;
+                } else {
+                    startTime = Date.now();
+                    isActive = true;
+                }
+            });
+            
+            // Track reading completion
+            window.addEventListener('beforeunload', function() {
+                if (isActive) {
+                    totalTime += Date.now() - startTime;
+                }
+                
+                const readingTimeMinutes = Math.round(totalTime / 60000);
+                localStorage.setItem('sampleReadingTime', readingTimeMinutes);
+                
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'reading_time', {
+                        'event_category': 'User Engagement',
+                        'event_label': `${readingTimeMinutes} minutes`,
+                        'value': readingTimeMinutes
+                    });
+                }
+            });
+        }
+
+        // Smooth Fade-in Animation
+        function initializeAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.paragraph, .dialogue, .scene-break').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Auto-save Reading Position
+        function saveReadingPosition() {
+            const scrollPosition = window.pageYOffset;
+            localStorage.setItem('sampleScrollPosition', scrollPosition);
+        }
+        
+        function restoreReadingPosition() {
+            const savedPosition = localStorage.getItem('sampleScrollPosition');
+            if (savedPosition) {
+                window.scrollTo(0, parseInt(savedPosition));
+            }
+        }
+
+        // Initialize Everything
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize features
+            initializeStarRating();
+            initializeAnimations();
+            trackReadingTime();
+            
+            // Restore user preferences
+            const savedFontSize = localStorage.getItem('readerFontSize');
+            if (savedFontSize) {
+                currentFontSize = parseFloat(savedFontSize);
+                updateFontSize();
+            }
+            
+            const savedNightMode = localStorage.getItem('readerNightMode');
+            if (savedNightMode === 'false') {
+                toggleNightMode();
+            }
+            
+            const savedRating = localStorage.getItem('sampleRating');
+            if (savedRating) {
+                highlightStars(parseInt(savedRating));
+                setRating(parseInt(savedRating));
+            }
+            
+            // Restore reading position after a short delay
+            setTimeout(restoreReadingPosition, 500);
+            
+            // Set up event listeners
+            window.addEventListener('scroll', function() {
+                updateReadingProgress();
+                saveReadingPosition();
+            });
+            
+            // Track that user started reading
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'sample_started', {
+                    'event_category': 'User Engagement',
+                    'event_label': 'Free Sample Reading',
+                    'value': 1
+                });
+            }
+            
+            console.log('Free Sample Reader initialized successfully');
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl/Cmd + Plus: Increase font size
+            if ((e.ctrlKey || e.metaKey) && e.key === '=') {
+                e.preventDefault();
+                increaseFontSize();
+            }
+            
+            // Ctrl/Cmd + Minus: Decrease font size
+            if ((e.ctrlKey || e.metaKey) && e.key === '-') {
+                e.preventDefault();
+                decreaseFontSize();
+            }
+            
+            // Ctrl/Cmd + D: Toggle night mode
+            if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                e.preventDefault();
+                toggleNightMode();
+            }
+            
+            // Ctrl/Cmd + P: Print
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                // Let default print behavior work
+            }
+        });
+
+        // Reading completion tracking
+        function checkReadingCompletion() {
+            const progress = parseFloat(document.getElementById('progressBar').style.width);
+            if (progress >= 90 && !localStorage.getItem('sampleCompleted')) {
+                localStorage.setItem('sampleCompleted', 'true');
+                
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'sample_completed', {
+                        'event_category': 'User Engagement',
+                        'event_label': 'Free Sample Finished',
+                        'value': 1
+                    });
+                }
+                
+                // Show subtle completion message
+                setTimeout(() => {
+                    const completionMsg = document.createElement('div');
+                    completionMsg.innerHTML = '🎉 Sample completed! Ready for the full story?';
+                    completionMsg.style.cssText = `
+                        position: fixed;
+                        top: 100px;
+                        right: 20px;
+                        background: linear-gradient(135deg, #4caf50, #45a049);
+                        color: white;
+                        padding: 1rem;
+                        border-radius: 10px;
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                        z-index: 1001;
+                        animation: slideInRight 0.5s ease-out;
+                        cursor: pointer;
+                    `;
+                    
+                    completionMsg.onclick = () => {
+                        window.open('https://amazon.com/dp/B0FB51KH6M', '_blank');
+                    };
+                    
+                    document.body.appendChild(completionMsg);
+                    
+                    setTimeout(() => {
+                        completionMsg.style.animation = 'slideOutRight 0.5s ease-in forwards';
+                        setTimeout(() => completionMsg.remove(), 500);
+                    }, 5000);
+                }, 1000);
+            }
+        }
+
+        // Add slide animations
+        const slideAnimations = document.createElement('style');
+        slideAnimations.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(slideAnimations);
+
+        // Enhanced scroll tracking
+        let lastScrollCheck = 0;
+        window.addEventListener('scroll', function() {
+            const now = Date.now();
+            if (now - lastScrollCheck > 100) { // Throttle to every 100ms
+                updateReadingProgress();
+                saveReadingPosition();
+                checkReadingCompletion();
+                lastScrollCheck = now;
+            }
+        });
+    </script>
+
+    <!-- Google Analytics (replace with your GA4 measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID', {
+            page_title: 'Free Sample - Massé Life',
+            page_location: window.location.href,
+            content_group1: 'Free Sample',
+            content_group2: 'Chapter 1'
+        });
+    </script>
+</body>
+</html>
