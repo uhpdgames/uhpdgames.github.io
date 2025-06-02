@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Massé Life | Join the Billiards Book Community</title>
+    <meta name="description" content="Join the Massé Life community of readers and billiards enthusiasts. Share your thoughts, discuss techniques, and connect with fellow fans of psychological thrillers.">
+    <meta name="keywords" content="Massé Life community, billiards readers, book discussion, psychological thriller fans, pool community">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Background Effects */
+        .bg-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .light-beam {
+            position: absolute;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+            animation: sway 6s ease-in-out infinite;
+        }
+        
+        .light-beam:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .light-beam:nth-child(2) { left: 25%; animation-delay: 2s; }
+        .light-beam:nth-child(3) { left: 40%; animation-delay: 1s; }
+        .light-beam:nth-child(4) { left: 60%; animation-delay: 3s; }
+        .light-beam:nth-child(5) { left: 75%; animation-delay: 1.5s; }
+        .light-beam:nth-child(6) { left: 90%; animation-delay: 2.5s; }
+        
+        .spotlight {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        .spotlight.left {
+            top: 20%;
+            left: 15%;
+            width: 150px;
+            height: 150px;
+        }
+        
+        .spotlight.right {
+            top: 30%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 2s;
+        }
+        
+        /* Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #333;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-menu li a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .nav-menu li a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-menu li a.active {
+            color: #fff;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem;
+        }
+        
+        .mobile-menu ul li {
+            margin-bottom: 1rem;
+        }
+        
+        .mobile-menu ul li a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu ul li a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 90px 2rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #ccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Community Stats */
+        .community-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+        
+        /* Community Sections */
+        .community-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .community-section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .community-section:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .section-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .section-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .section-cta {
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        .section-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        /* Discussion Board */
+        .discussion-board {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .board-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .board-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .new-post-btn {
+            background: #fff;
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .new-post-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .discussion-topics {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .topic-item {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .topic-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .topic-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .topic-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .topic-stats {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        /* Member Spotlight */
+        .member-spotlight {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .spotlight-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .spotlight-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .member-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #333, #666);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+        
+        .member-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .member-role {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .member-stats {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        /* Events Section */
+        .events-section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .events-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .events-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .event-item {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .event-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #fff, #ccc);
+        }
+        
+        .event-item:hover {
+            transform: translateX(5px);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        .event-date {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .event-description {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        /* Join CTA */
+        .join-cta {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .cta-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .btn-secondary:hover {
+            background: #fff;
+            color: #000;
+        }
+        
+        /* Animations */
+        @keyframes sway {
+            0%, 100% { transform: rotate(-1deg); opacity: 0.2; }
+            50% { transform: rotate(1deg); opacity: 0.4; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.1); }
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 90px 1rem 2rem;
+            }
+            
+            .community-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            .community-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-members {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .board-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            
+            .topic-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .community-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .community-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-effects">
+        <div class="light-beam"></div>
+        <div class="light-beam"></div>
+        <div class="light-beam"></div>
+        <div class="light-beam"></div>
+        <div class="light-beam"></div>
+        <div class="light-beam"></div>
+        <div class="spotlight left"></div>
+        <div class="spotlight right"></div>
+    </div>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="/" class="logo">MASSÉ LIFE</a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="/">🏠 Home</a></li>
+                <li><a href="/masse-life">📚 The Book</a></li>
+                <li><a href="/author">👤 Author</a></li>
+                <li><a href="/series">📖 Book Series</a></li>
+                <li><a href="/blog">🎱 Billiards Blog</a></li>
+                <li><a href="/community" class="active">👥 Community</a></li>
+                <li><a href="/shop">🛒 Shop</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="/">🏠 Home</a></li>
+                <li><a href="/masse-life">📚 The Book</a></li>
+                <li><a href="/author">👤 Author</a></li>
+                <li><a href="/series">📖 Book Series</a></li>
+                <li><a href="/blog">🎱 Billiards Blog</a></li>
+                <li><a href="/community" class="active">👥 Community</a></li>
+                <li><a href="/shop">🛒 Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1 class="page-title">COMMUNITY</h1>
+            <p class="page-subtitle">
+                Join thousands of readers and billiards enthusiasts in discussing Massé Life, 
+                sharing techniques, and connecting over our shared passion for psychological thrillers and the art of billiards.
+            </p>
+        </section>
+
+        <!-- Community Stats -->
+        <section class="community-stats">
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-number" id="memberCount">2,547</div>
+                <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💬</div>
+                <div class="stat-number" id="postCount">1,823</div>
+                <div class="stat-label">Discussions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎱</div>
+                <div class="stat-number" id="tipsCount">342</div>
+                <div class="stat-label">Billiards Tips</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-number" id="reviewCount">456</div>
+                <div class="stat-label">Book Reviews</div>
+            </div>
+        </section>
+
+        <!-- Community Sections -->
+        <section class="community-sections">
+            <div class="community-section">
+                <div class="section-icon">📖</div>
+                <h3 class="section-title">Book Discussion</h3>
+                <p class="section-description">
+                    Dive deep into the psychological themes of Massé Life. Share your interpretations, 
+                    favorite moments, and theories about the characters' motivations.
+                </p>
+                <button class="section-cta" onclick="joinDiscussion('book')">Join Book Discussion</button>
+            </div>
+
+            <div class="community-section">
+                <div class="section-icon">🎱</div>
+                <h3 class="section-title">Billiards Techniques</h3>
+                <p class="section-description">
+                    Master the art of billiards with fellow enthusiasts. Share techniques, ask questions, 
+                    and learn from experienced players around the world.
+                </p>
+                <button class="section-cta" onclick="joinDiscussion('billiards')">Share Your Skills</button>
+            </div>
+
+            <div class="community-section">
+                <div class="section-icon">🧠</div>
+                <h3 class="section-title">Psychology Corner</h3>
+                <p class="section-description">
+                    Explore the psychological elements of both the book and the game. Discuss mental strategies, 
+                    character analysis, and the psychology of competition.
+                </p>
+                <button class="section-cta" onclick="joinDiscussion('psychology')">Explore Psychology</button>
+            </div>
+
+            <div class="community-section">
+                <div class="section-icon">✍️</div>
+                <h3 class="section-title">Fan Creations</h3>
+                <p class="section-description">
+                    Share your fan art, fiction, poetry, or any creative works inspired by Massé Life. 
+                    Celebrate creativity and get feedback from fellow fans.
+                </p>
+                <button class="section-cta" onclick="joinDiscussion('fanart')">Share Your Art</button>
+            </div>
+        </section>
+
+        <!-- Discussion Board -->
+        <section class="discussion-board">
+            <div class="board-header">
+                <h2 class="board-title">Recent Discussions</h2>
+                <button class="new-post-btn" onclick="createNewPost()">+ New Discussion</button>
+            </div>
+            
+            <div class="discussion-topics">
+                <div class="topic-item" onclick="openTopic(1)">
+                    <div class="topic-title">🎱 Mastering the Massé Shot: Real vs Fiction</div>
+                    <div class="topic-meta">
+                        <span>by PoolMaster_92 • 2 hours ago</span>
+                        <div class="topic-stats">
+                            <span>💬 23</span>
+                            <span>👁️ 156</span>
+                            <span>❤️ 12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item" onclick="openTopic(2)">
+                    <div class="topic-title">📚 Character Analysis: The Psychology of the Protagonist</div>
+                    <div class="topic-meta">
+                        <span>by BookWorm_Sarah • 5 hours ago</span>
+                        <div class="topic-stats">
+                            <span>💬 41</span>
+                            <span>👁️ 289</span>
+                            <span>❤️ 28</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item" onclick="openTopic(3)">
+                    <div class="topic-title">🎨 Fan Art: My interpretation of the tunnel scene</div>
+                    <div class="topic-meta">
+                        <span>by ArtisticSoul • 1 day ago</span>
+                        <div class="topic-stats">
+                            <span>💬 67</span>
+                            <span>👁️ 523</span>
+                            <span>❤️ 89</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item" onclick="openTopic(4)">
+                    <div class="topic-title">🏆 Weekly Billiards Challenge: Trick Shot Tuesday</div>
+                    <div class="topic-meta">
+                        <span>by CommunityMod • 2 days ago</span>
+                        <div class="topic-stats">
+                            <span>💬 12</span>
+                            <span>👁️ 98</span>
+                            <span>❤️ 15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="topic-item" onclick="openTopic(5)">
+                    <div class="topic-title">💭 Book Club: Chapter 3 Discussion - The First Massé</div>
+                    <div class="topic-meta">
+                        <span>by ReadingGroup_Leader • 3 days ago</span>
+                        <div class="topic-stats">
+                            <span>💬 34</span>
+                            <span>❤️ 45</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member Spotlight -->
+        <section class="member-spotlight">
+            <div class="spotlight-header">
+                <h2 class="spotlight-title">Member Spotlight</h2>
+                <p style="color: #ccc;">Celebrating our most active and helpful community members</p>
+            </div>
+            
+            <div class="featured-members">
+                <div class="member-card">
+                    <div class="member-avatar">🏆</div>
+                    <div class="member-name">PoolLegend_Alex</div>
+                    <div class="member-role">Billiards Expert</div>
+                    <div class="member-stats">
+                        📝 89 Posts • 🎯 Pro Player • ⭐ 4.9 Rating
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">📚</div>
+                    <div class="member-name">BookCritic_Maya</div>
+                    <div class="member-role">Literary Analyst</div>
+                    <div class="member-stats">
+                        📖 156 Reviews • 🎓 PhD Literature • ⭐ 4.8 Rating
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">🎨</div>
+                    <div class="member-name">CreativeVision_Tom</div>
+                    <div class="member-role">Fan Artist</div>
+                    <div class="member-stats">
+                        🎭 67 Artworks • 🏅 Featured Artist • ⭐ 4.9 Rating
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">🧠</div>
+                    <div class="member-name">MindReader_Dr.Kim</div>
+                    <div class="member-role">Psychology Expert</div>
+                    <div class="member-stats">
+                        🔬 43 Analyses • 👨‍⚕️ Psychologist • ⭐ 5.0 Rating
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-section">
+            <div class="events-header">
+                <h2 class="events-title">Upcoming Community Events</h2>
+                <p style="color: #ccc;">Join us for exclusive events, discussions, and competitions</p>
+            </div>
+            
+            <div class="events-list">
+                <div class="event-item">
+                    <div class="event-date">📅 January 25, 2025 • 8:00 PM EST</div>
+                    <div class="event-title">Live Author Q&A with Phi Dang Ung Hoang</div>
+                    <div class="event-description">
+                        Join our exclusive live session with the author! Ask questions about the book, 
+                        character development, billiards techniques, and get insights into the upcoming sequel.
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">📅 February 1-7, 2025</div>
+                    <div class="event-title">Billiards Technique Week</div>
+                    <div class="event-description">
+                        A week-long series of workshops, tutorials, and challenges focusing on advanced 
+                        billiards techniques featured in Massé Life. Daily challenges with prizes!
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">📅 February 14, 2025 • 7:00 PM EST</div>
+                    <div class="event-title">Valentine's Special: Love & Psychology in Massé Life</div>
+                    <div class="event-description">
+                        Explore the romantic and psychological themes in the novel. Discuss character 
+                        relationships, emotional development, and the psychology of attraction.
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">📅 February 20-22, 2025</div>
+                    <div class="event-title">Fan Art Weekend</div>
+                    <div class="event-description">
+                        Submit your creative interpretations of scenes, characters, or themes from Massé Life. 
+                        Winners will be featured on the official website and social media.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join CTA -->
+        <section class="join-cta">
+            <h2 class="cta-title">Ready to Join Our Community?</h2>
+            <p class="cta-description">
+                Become part of a passionate community of readers and billiards enthusiasts. 
+                Share your thoughts, learn new techniques, make friends, and dive deeper into the world of Massé Life.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="joinCommunity()">🚀 Join Community</button>
+                <button class="btn-secondary" onclick="browseCommunity()">👀 Browse as Guest</button>
+            </div>
+        </section>
+
+        <!-- Community Guidelines -->
+        <section class="community-section" style="grid-column: 1 / -1; margin-top: 3rem;">
+            <div class="section-icon">📋</div>
+            <h3 class="section-title">Community Guidelines</h3>
+            <div style="text-align: left; color: #ccc; line-height: 1.8;">
+                <p style="margin-bottom: 1rem;"><strong style="color: #fff;">🤝 Be Respectful:</strong> Treat all members with kindness and respect, regardless of skill level or opinion.</p>
+                <p style="margin-bottom: 1rem;"><strong style="color: #fff;">💬 Stay On Topic:</strong> Keep discussions relevant to Massé Life, billiards, or related themes.</p>
+                <p style="margin-bottom: 1rem;"><strong style="color: #fff;">🚫 No Spoilers:</strong> Use spoiler tags when discussing plot details for those still reading.</p>
+                <p style="margin-bottom: 1rem;"><strong style="color: #fff;">📚 Quality Content:</strong> Share meaningful insights, helpful tips, and constructive feedback.</p>
+                <p style="margin-bottom: 1rem;"><strong style="color: #fff;">🎯 Help Others:</strong> Share your knowledge and help fellow community members improve their skills.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Join Community Functions
+        function joinCommunity() {
+            alert('🎉 Welcome to the Massé Life Community!\n\nClick OK to create your account and start connecting with fellow readers and billiards enthusiasts.');
+            // Add actual registration logic here
+        }
+
+        function browseCommunity() {
+            alert('👀 Browsing as Guest\n\nYou can read discussions and view content. Join us to participate in conversations and events!');
+            // Add guest browsing logic here
+        }
+
+        // Discussion Functions
+        function joinDiscussion(type) {
+            const messages = {
+                book: '📚 Joining Book Discussion!\n\nExplore character analysis, plot theories, and share your favorite moments from Massé Life.',
+                billiards: '🎱 Welcome to Billiards Corner!\n\nShare techniques, ask questions, and learn from expert players.',
+                psychology: '🧠 Entering Psychology Corner!\n\nDive deep into the mental aspects of the game and character psychology.',
+                fanart: '🎨 Welcome to Fan Creations!\n\nShare your artwork, stories, and creative interpretations.'
+            };
+            
+            alert(messages[type] || 'Joining discussion...');
+            // Add navigation logic here
+        }
+
+        function createNewPost() {
+            const title = prompt('📝 Create New Discussion\n\nEnter your discussion title:');
+            if (title && title.trim()) {
+                alert(`✅ Discussion "${title}" created successfully!\n\nYour post will be reviewed and published shortly.`);
+                // Add post creation logic here
+            }
+        }
+
+        function openTopic(topicId) {
+            alert(`📖 Opening Discussion #${topicId}\n\nLoading full discussion thread...`);
+            // Add topic navigation logic here
+        }
+
+        // Auto-update community stats
+        function updateStats() {
+            const memberCount = document.getElementById('memberCount');
+            const postCount = document.getElementById('postCount');
+            const tipsCount = document.getElementById('tipsCount');
+            const reviewCount = document.getElementById('reviewCount');
+            
+            // Simulate growing community
+            if (memberCount) {
+                let current = parseInt(memberCount.textContent.replace(',', ''));
+                if (Math.random() < 0.3) { // 30% chance to increment
+                    current += Math.floor(Math.random() * 3 + 1);
+                    memberCount.textContent = current.toLocaleString();
+                }
+            }
+            
+            if (postCount && Math.random() < 0.2) {
+                let current = parseInt(postCount.textContent.replace(',', ''));
+                current += Math.floor(Math.random() * 2 + 1);
+                postCount.textContent = current.toLocaleString();
+            }
+        }
+
+        // Member card interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const memberCards = document.querySelectorAll('.member-card');
+            memberCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const memberName = this.querySelector('.member-name').textContent;
+                    const memberRole = this.querySelector('.member-role').textContent;
+                    alert(`👤 ${memberName}\n${memberRole}\n\nView full profile and message this member?`);
+                });
+            });
+
+            // Event item interactions
+            const eventItems = document.querySelectorAll('.event-item');
+            eventItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const eventTitle = this.querySelector('.event-title').textContent;
+                    const eventDate = this.querySelector('.event-date').textContent;
+                    alert(`📅 ${eventTitle}\n\n${eventDate}\n\nWould you like to RSVP for this event?`);
+                });
+                
+                // Add hover effect
+                item.style.cursor = 'pointer';
+            });
+
+            // Stat card animations
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px) scale(1)';
+                });
+            });
+
+            // Topic item interactions
+            const topicItems = document.querySelectorAll('.topic-item');
+            topicItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Initialize auto-stats update
+            setInterval(updateStats, 10000); // Update every 10 seconds
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Add smooth reveal animation on scroll
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.community-section, .stat-card, .topic-item, .member-card, .event-item');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                } else {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                }
+            });
+        }
+
+        // Initialize reveal animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial state
+            const elements = document.querySelectorAll('.community-section, .stat-card, .topic-item, .member-card, .event-item');
+            elements.forEach(element => {
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+            });
+            
+            // Start reveal animation
+            setTimeout(revealOnScroll, 100);
+            window.addEventListener('scroll', revealOnScroll);
+        });
+
+        // Add typing effect for community stats
+        function animateNumber(element, target, duration = 2000) {
+            const start = parseInt(element.textContent.replace(/,/g, '')) || 0;
+            const increment = (target - start) / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+
+        // Initialize number animations when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const memberCount = document.getElementById('memberCount');
+                const postCount = document.getElementById('postCount');
+                const tipsCount = document.getElementById('tipsCount');
+                const reviewCount = document.getElementById('reviewCount');
+                
+                if (memberCount) animateNumber(memberCount, 2547, 2000);
+                if (postCount) animateNumber(postCount, 1823, 2200);
+                if (tipsCount) animateNumber(tipsCount, 342, 1800);
+                if (reviewCount) animateNumber(reviewCount, 456, 1900);
+            }, 500);
+        });
+    </script>
+</body>
+</html>
