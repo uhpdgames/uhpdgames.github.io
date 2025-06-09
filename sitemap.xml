@@ -1,72 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
-  <loc>https://uhpd.shop/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://uhpd.shop/</loc>
+	<lastmod>2025-06-09T23:32:34+01:00</lastmod>
+	<changefreq>always</changefreq>
+	<priority>1.0</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://uhpd.shop/en" />
+	<xhtml:link rel="alternate" hreflang="vi" href="https://uhpd.shop/vi" />
+	<xhtml:link rel="alternate" hreflang="en-US" href="https://uhpd.shop/us" />
+	<xhtml:link rel="alternate" hreflang="en-GB" href="https://uhpd.shop/uk" />
+	<xhtml:link rel="alternate" hreflang="en-CA" href="https://uhpd.shop/ca" />
+	<xhtml:link rel="alternate" hreflang="en-AU" href="https://uhpd.shop/au" />
 </url>
 <url>
-  <loc>https://uhpd.shop/masse-life/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://uhpd.shop/author/</loc>
+	<lastmod>2025-06-09T23:32:40+01:00</lastmod>
+	<changefreq>always</changefreq>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://uhpd.shop/author/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://uhpd.shop/community/</loc>
+	<lastmod>2025-06-09T23:32:40+01:00</lastmod>
+	<changefreq>always</changefreq>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://uhpd.shop/series/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://uhpd.shop/series/</loc>
+	<lastmod>2025-06-09T23:32:40+01:00</lastmod>
+	<changefreq>always</changefreq>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://uhpd.shop/blog/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://uhpd.shop/blog/</loc>
+	<lastmod>2025-06-09T23:32:40+01:00</lastmod>
+	<changefreq>always</changefreq>
+	<priority>0.8</priority>
+	<xhtml:link rel="alternate" hreflang="en" href="https://uhpd.shop/blog/masse-shot-tutorial.html" />
+	<xhtml:link rel="alternate" hreflang="vi" href="https://uhpd.shop/blog/vi/cach-danh-cue-masse.html" />
 </url>
 <url>
-  <loc>https://uhpd.shop/community/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://uhpd.shop/shop/</loc>
+	<lastmod>2025-06-09T23:32:41+01:00</lastmod>
+	<changefreq>always</changefreq>
+	<priority>0.8</priority>
 </url>
-<url>
-  <loc>https://uhpd.shop/shop/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://uhpd.shop/free-sample/</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://uhpd.shop/blog/billiards-technique-guide.html</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://uhpd.shop/free-sample/white-ball.html</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://uhpd.shop/free-sample/black-ball.html</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://uhpd.shop/free-sample/endless-losing-streaks.html</loc>
-  <lastmod>2025-06-07T10:26:30+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
 </urlset>
